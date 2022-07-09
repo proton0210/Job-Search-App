@@ -4,7 +4,7 @@
       <div
         class="flex h-full px-8 mx-auto border-b border-solid flex-nowrap border-brand-gray-1"
       >
-        <a href="/" class="flex items-center h-full text-xl">Bobo Careers</a>
+        <a href="/" class="flex items-center h-full text-xl">{{ company }}</a>
       </div>
     </div>
   </header>
@@ -14,5 +14,10 @@
 // think of this as a configuration for the component.
 export default {
   name: "MainNav", // Gives formal name to the component.
+  data() {
+    return {
+      company: "Bobo Careers",
+    };
+  },
 };
 </script>
