@@ -6,7 +6,7 @@
       >
         <a href="/" class="flex items-center h-full text-xl">{{ company }}</a>
         <h2 class="flex items-center h-full ml-8">
-          Developer by :{{ author }}
+          Developed by {{ author.firstName }} {{ author.lastName }}
         </h2>
       </div>
     </div>
@@ -20,7 +20,10 @@ export default {
   data() {
     return {
       company: "Bobo Careers",
-      author: "Vidit",
+      author: {
+        firstName: "Vidit",
+        lastName: "Shah",
+      },
     };
   },
 };
