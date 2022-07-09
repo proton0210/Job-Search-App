@@ -21,6 +21,9 @@
             </li>
           </ul>
         </nav>
+        <div class="flex items-center h-full ml-auto">
+          <action-button />
+        </div>
       </div>
     </div>
   </header>
@@ -28,8 +31,12 @@
 
 <script>
 // think of ’’’this as a configuration for the component.
+import ActionButton from "@/components/ActionButton.vue";
 export default {
   name: "MainNav", // Gives formal name to the component.
+  components: {
+    ActionButton, // Adds the component to the component list.
+  },
   data() {
     return {
       company: "Bobo Careers",

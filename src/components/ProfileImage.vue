@@ -1,0 +1,14 @@
+<template>
+  <img :src="image" class="object-contain w-8 h-8 rounded-3xl" />
+</template>
+
+<script>
+export default {
+  name: "ProfileImage",
+  data() {
+    return {
+      image: "@/assets/profile.jpeg",
+    };
+  },
+};
+</script>

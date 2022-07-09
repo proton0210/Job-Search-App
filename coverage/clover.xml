@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1657403107135" clover="3.2.0">
-  <project timestamp="1657403107135" name="All files">
-    <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1" elements="3" coveredelements="3" complexity="0" loc="2" ncloc="2" packages="1" files="1" classes="1"/>
-    <file name="MainNav.vue" path="/Users/viditshah/code/Vue/job-search/src/components/MainNav.vue">
-      <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-      <line num="31" count="1" type="stmt"/>
-      <line num="34" count="2" type="stmt"/>
+<coverage generated="1657407980441" clover="3.2.0">
+  <project timestamp="1657407980441" name="All files">
+    <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0" elements="1" coveredelements="1" complexity="0" loc="1" ncloc="1" packages="1" files="1" classes="1"/>
+    <file name="ActionButton.vue" path="/Users/viditshah/code/Vue/job-search/src/components/ActionButton.vue">
+      <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <line num="10" count="1" type="stmt"/>
     </file>
   </project>
 </coverage>
