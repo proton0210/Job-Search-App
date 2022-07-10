@@ -31,14 +31,21 @@ describe("when user is logged out", () => {
 });
 
 describe("when user is logged in", () => {
-  it("displays sign out button", async () => {
+  it("displays user profile picture", async () => {
     const wrapper = mount(MainNav);
-    await wrapper.setData({
-      isLoggedIn: true,
-    });
-    const profileImage = wrapper.find("[data-test='main-nav-profile-image']");
-    const loginButton = wrapper.find("[data-test='main-nav-login-button']");
-    expect(profileImage.exists()).toBe(true);
+
+    let profileImage = wrapper.find("[data-test='main-nav-profile-image']");
+    expect(profileImage.exists()).toBe(false);
+
+    let loginButton = wrapper.find("[data-test='main-nav-login-button']");
+    expect(loginButton.exists()).toBe(true);
+
+    await loginButton.trigger("click");
+
+    profileImage = wrapper.find("[data-test='main-nav-profile-image']");
+    loginButton = wrapper.find("[data-test='main-nav-login-button']");
+
     expect(loginButton.exists()).toBe(false);
+    expect(profileImage.exists()).toBe(true);
   });
 });

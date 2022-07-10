@@ -23,7 +23,11 @@
         </nav>
         <div class="flex items-center h-full ml-auto">
           <profile-image v-if="isLoggedIn" data-test="main-nav-profile-image" />
-          <action-button v-else data-test="main-nav-login-button" />
+          <action-button
+            v-else
+            data-test="main-nav-login-button"
+            @click="loginUser"
+          />
         </div>
       </div>
     </div>
@@ -54,6 +58,12 @@ export default {
       ],
       isLoggedIn: false,
     };
+  },
+  methods: {
+    // Don't use arrow functions here.
+    loginUser() {
+      this.isLoggedIn = true;
+    },
   },
 };
 </script>
