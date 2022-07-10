@@ -15,6 +15,7 @@ describe("ActionButton.vue", () => {
   it("applies one or more classes correctly", () => {
     const wrapper = mount(ActionButton, {
       propsData: {
+        text: "test",
         type: "primary",
       },
     });
