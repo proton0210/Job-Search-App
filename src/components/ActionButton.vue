@@ -15,6 +15,7 @@ export default {
     type: {
       type: String,
       default: "primary",
+      validator: (value) => ["primary", "secondary"].includes(value),
     },
   },
 
