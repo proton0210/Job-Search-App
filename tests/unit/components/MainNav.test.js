@@ -21,3 +21,24 @@ describe("MainNav.vue", () => {
     ]);
   });
 });
+
+describe("when user is logged out", () => {
+  it("displays sign in  button", () => {
+    const wrapper = mount(MainNav);
+    const loginButton = wrapper.find("[data-test='main-nav-login-button']");
+    expect(loginButton.exists()).toBe(true);
+  });
+});
+
+describe("when user is logged in", () => {
+  it("displays sign out button", async () => {
+    const wrapper = mount(MainNav);
+    await wrapper.setData({
+      isLoggedIn: true,
+    });
+    const profileImage = wrapper.find("[data-test='main-nav-profile-image']");
+    const loginButton = wrapper.find("[data-test='main-nav-login-button']");
+    expect(profileImage.exists()).toBe(true);
+    expect(loginButton.exists()).toBe(false);
+  });
+});
