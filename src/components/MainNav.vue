@@ -32,6 +32,7 @@
           />
         </div>
       </div>
+      <sub-nav />
     </div>
   </header>
 </template>
@@ -40,11 +41,13 @@
 // think of ’’’this as a configuration for the component.
 import ActionButton from "@/components/ActionButton.vue";
 import ProfileImage from "@/components/ProfileImage.vue";
+import SubNav from "@/components/SubNav.vue";
 export default {
   name: "MainNav", // Gives formal name to the component.
   components: {
     ActionButton, // Adds the component to the component list.
     ProfileImage,
+    SubNav,
   },
   data() {
     return {
