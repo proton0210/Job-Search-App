@@ -9,7 +9,7 @@ describe("ActionButton.vue", () => {
         type: "primary",
       },
     });
-    expect(wrapper.text()).toBe("test");
+    expect(wrapper.text()).toMatch("test");
   });
 
   it("applies one or more classes correctly", () => {
