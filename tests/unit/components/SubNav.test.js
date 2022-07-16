@@ -1,10 +1,16 @@
 import SubNav from "@/components/SubNav.vue";
-import { mount } from "@vue/test-utils";
+import { shallowMount } from "@vue/test-utils";
 
+// replacing mount with shallowMount to test the component without the sub-components
 describe("SubNav.vue", () => {
   describe("when user is on jobs page", () => {
     it("displays job count", () => {
-      const wrapper = mount(SubNav, {
+      const wrapper = shallowMount(SubNav, {
+        global: {
+          stubs: {
+            FontAwesomeIcon: true,
+          },
+        },
         data() {
           return {
             onJobsResultPage: true,
@@ -18,7 +24,12 @@ describe("SubNav.vue", () => {
 
   describe("When user is NOT on job page", () => {
     it("does not display job count", () => {
-      const wrapper = mount(SubNav, {
+      const wrapper = shallowMount(SubNav, {
+        global: {
+          stubs: {
+            FontAwesomeIcon: true,
+          },
+        },
         data() {
           return {
             onJobsResultPage: false,
