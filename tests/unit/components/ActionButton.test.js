@@ -1,9 +1,9 @@
 import ActionButton from "@/components/ActionButton.vue";
-import { mount } from "@vue/test-utils";
+import { shallowMount } from "@vue/test-utils";
 
 describe("ActionButton.vue", () => {
   it("renders text", () => {
-    const wrapper = mount(ActionButton, {
+    const wrapper = shallowMount(ActionButton, {
       propsData: {
         text: "test",
         type: "primary",
@@ -13,7 +13,7 @@ describe("ActionButton.vue", () => {
   });
 
   it("applies one or more classes correctly", () => {
-    const wrapper = mount(ActionButton, {
+    const wrapper = shallowMount(ActionButton, {
       propsData: {
         text: "test",
         type: "primary",

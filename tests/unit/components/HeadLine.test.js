@@ -1,10 +1,21 @@
 import HeadLine from "@/components/HeadLine.vue";
-import { mount } from "@vue/test-utils";
+import { shallowMount } from "@vue/test-utils";
 import { nextTick } from "vue";
 describe("HeadLine.vue", () => {
+  //Runs before each "it" test
+  /*
+  beforeEach(() => {
+  });
+
+  afterEach(() => {
+    jest.useRealTimers();
+  });
+*/
+
   it("displays introductory action verb", () => {
     jest.useFakeTimers("legacy");
-    const wrapper = mount(HeadLine);
+
+    const wrapper = shallowMount(HeadLine);
     const actionPhrase = wrapper.find("[data-test='action-phrase']");
     expect(actionPhrase.text()).toBe("Build for everyone");
     jest.useRealTimers();
@@ -12,14 +23,13 @@ describe("HeadLine.vue", () => {
 
   it("changes action verb after consistent interval", () => {
     jest.useFakeTimers("legacy");
-    mount(HeadLine);
+    shallowMount(HeadLine);
     expect(setInterval).toHaveBeenCalled();
-    jest.useRealTimers();
+    jest.useFakeTimers("legacy");
   });
 
   it("swaps action verb after first interval", async () => {
-    jest.useFakeTimers("legacy");
-    const wrapper = mount(HeadLine);
+    const wrapper = shallowMount(HeadLine);
     jest.runOnlyPendingTimers();
     await nextTick(); // Use it immediately after you’ve changed some data to wait for the DOM update.
     const actionPhrase = wrapper.find("[data-test='action-phrase']");
@@ -30,7 +40,7 @@ describe("HeadLine.vue", () => {
   it("removes interval when component disappears", () => {
     jest.useFakeTimers("legacy");
 
-    const wrapper = mount(HeadLine);
+    const wrapper = shallowMount(HeadLine);
     wrapper.unmount();
     expect(clearInterval).toHaveBeenCalled();
     jest.useRealTimers();

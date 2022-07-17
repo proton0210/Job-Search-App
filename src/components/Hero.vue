@@ -5,11 +5,13 @@
         <div class="col-span-1 border border-blue-700 cols-start-1">
           1 column
         </div>
-        <div class="col-span-5 border-blue-700 cols-start-2">
+        <div class="col-span-5 border border-blue-700 cols-start-2">
           <head-line-vue />
         </div>
-        <div class="col-span-5 border-blue-700 cols-start-7">5 cols</div>
-        <div class="col-span-1 border-blue-700 cols-start-12">1 column</div>
+        <div class="col-span-5 border border-blue-700 cols-start-7">5 cols</div>
+        <div class="col-span-1 border border-blue-700 cols-start-12">
+          1 cols
+        </div>
       </div>
     </section>
   </main>
