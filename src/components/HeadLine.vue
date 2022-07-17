@@ -1,6 +1,9 @@
 <template>
   <section>
-    <h1 class="font-bold tracking-tighter text-8xl mb-14">
+    <h1
+      class="font-bold tracking-tighter text-8xl mb-14"
+      data-test="action-phrase"
+    >
       <span :class="actionClasses">{{ action }}</span>
       <br />
       for everyone
@@ -40,7 +43,7 @@ export default {
   methods: {
     changeTitle() {
       this.interval = setInterval(() => {
-        const actions = ["Build", "Created", "Design", "Code"];
+        const actions = ["Build", "Create", "Design", "Code"];
         this.action = nextElementInList(actions, this.action);
       }, 3000);
     },
@@ -53,7 +56,7 @@ export default {
   color: #1a73e8;
 }
 
-.created {
+.create {
   color: #34a853;
 }
 .design {
