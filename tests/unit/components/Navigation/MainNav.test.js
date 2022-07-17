@@ -51,7 +51,7 @@ describe("when user is logged in", () => {
     expect(profileImage.exists()).toBe(true);
   });
 
-  it("displays subnavigation menu with additional information", async () => {
+  it("displays sub-navigation menu with additional information", async () => {
     const wrapper = shallowMount(MainNav);
     let subNav = wrapper.find("[data-test='subnav']");
     expect(subNav.exists()).toBe(false);

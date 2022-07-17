@@ -7,10 +7,10 @@
       <div class="relative flex h-full pr-3 items-center-flex-1">
         <label class="absolute left-0 -top-10">Role</label>
         <input
-          :value="role"
+          v-model="role"
           type="text"
           placeholder="Software Engineer"
-          class="w-full font-normal test-lg :focus:outline-none"
+          class="w-full font-normal border-none test-lg focus:ring-0"
         />
       </div>
       <span
@@ -20,10 +20,10 @@
       <div class="relative flex h-full pl-3 items-center-1">
         <label class="absolute left-0 -top-10">Where?</label>
         <input
-          :value="location"
+          v-model="location"
           type="text"
           placeholder="Mumbai, India"
-          class="w-full font-normal test-lg :focus:outline-none"
+          class="w-full font-normal border-none test-lg focus:ring-0"
         />
       </div>
     </div>
@@ -47,4 +47,4 @@ export default {
 };
 </script>
 
-<style></style>
+<style scoped></style>

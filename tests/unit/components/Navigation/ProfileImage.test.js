@@ -1,4 +1,4 @@
-import ProfileImage from "@/components/ProfileImage.vue";
+import ProfileImage from "@/components/Navigation/ProfileImage.vue";
 import { shallowMount } from "@vue/test-utils";
 
 describe("ProfileImage.vue", () => {

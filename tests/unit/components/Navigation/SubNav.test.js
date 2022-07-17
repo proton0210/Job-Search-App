@@ -1,4 +1,4 @@
-import SubNav from "@/components/SubNav.vue";
+import SubNav from "@/components/Navigation/SubNav.vue";
 import { shallowMount } from "@vue/test-utils";
 
 // replacing mount with shallowMount to test the component without the sub-components
