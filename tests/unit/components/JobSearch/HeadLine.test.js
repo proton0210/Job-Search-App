@@ -1,4 +1,4 @@
-import HeadLine from "@/components/HeadLine.vue";
+import HeadLine from "@/components/JobSearch/HeadLine.vue";
 import { shallowMount } from "@vue/test-utils";
 import { nextTick } from "vue";
 describe("HeadLine.vue", () => {

@@ -1,4 +1,4 @@
-import ActionButton from "@/components/ActionButton.vue";
+import ActionButton from "@/components/Shared/ActionButton.vue";
 import { shallowMount } from "@vue/test-utils";
 
 describe("ActionButton.vue", () => {

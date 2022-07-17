@@ -20,8 +20,8 @@
 </template>
 
 <script>
-import HeadLineVue from "@/components/HeadLine.vue";
-import JobSearchForm from "@/components/JobSearchForm.vue";
+import HeadLineVue from "@/components/JobSearch/HeadLine.vue";
+import JobSearchForm from "@/components/JobSearch/JobSearchForm.vue";
 export default {
   name: "Hero",
   components: {

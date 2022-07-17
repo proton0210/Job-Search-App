@@ -39,9 +39,9 @@
 
 <script>
 // think of ’’’this as a configuration for the component.
-import ActionButton from "@/components/ActionButton.vue";
 import ProfileImage from "@/components/Navigation/ProfileImage.vue";
 import SubNav from "@/components/Navigation/SubNav.vue";
+import ActionButton from "@/components/Shared/ActionButton.vue";
 export default {
   name: "MainNav", // Gives formal name to the component.
   components: {
