@@ -3,12 +3,13 @@
     type="text"
     :value="value"
     :placeholder="placeholder"
-    @input="handleInput"
+    @input="inputHandler"
     class="w-full font-normal border-none test-lg focus:ring-0"
   />
 </template>
 
 <script>
+//Props should usually just flow down and should not be modified
 export default {
   name: "TextInput",
   props: {
@@ -17,17 +18,15 @@ export default {
       required: true,
       default: "",
     },
-  },
-  data() {
-    return {
-      value: "",
-    };
+    value: {
+      type: String,
+      required: true,
+    },
   },
   methods: {
-    // In parent component i.e JobSearchForm.vue, we have this method: as handle-input
-    handleInput($event) {
-      this.value = $event.target.value;
-      this.$emit("handleInput", this.value); // name of the event and payload
+    // In parent component i.e JobSearchForm.vue, we have this EVENT(@) as : as handle-input
+    inputHandler($event) {
+      this.$emit("handleInput", $event.target.value); // name of the event and payload
     },
   },
 };

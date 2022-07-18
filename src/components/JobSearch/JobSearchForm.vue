@@ -17,7 +17,10 @@
       >
       <div class="relative flex h-full pl-3 items-center-1">
         <label class="absolute left-0 -top-10">Where?</label>
-        <text-input placeholder="Mumbai India" />
+        <text-input
+          placeholder="Mumbai,India"
+          @handle-input="location = $event"
+        />
       </div>
     </div>
     <action-button text="Search" type="secondary" class="rounded-r-3xl" />
@@ -39,9 +42,10 @@ export default {
       location: "",
     };
   },
+
   methods: {
-    updateRole(value) {
-      this.role = value;
+    updateRole(payload) {
+      this.role = payload; // use this way
     },
   },
 };
