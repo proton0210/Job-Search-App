@@ -6,11 +6,9 @@
     <div class="flex flex-1 h-full text-base font-light flex-nowrap">
       <div class="relative flex h-full pr-3 items-center-flex-1">
         <label class="absolute left-0 -top-10">Role</label>
-        <input
-          v-model="role"
-          type="text"
+        <text-input
           placeholder="Software Engineer"
-          class="w-full font-normal border-none test-lg focus:ring-0"
+          @handle-input="updateRole"
         />
       </div>
       <span
@@ -19,12 +17,7 @@
       >
       <div class="relative flex h-full pl-3 items-center-1">
         <label class="absolute left-0 -top-10">Where?</label>
-        <input
-          v-model="location"
-          type="text"
-          placeholder="Mumbai, India"
-          class="w-full font-normal border-none test-lg focus:ring-0"
-        />
+        <text-input placeholder="Mumbai India" />
       </div>
     </div>
     <action-button text="Search" type="secondary" class="rounded-r-3xl" />
@@ -33,16 +26,23 @@
 
 <script>
 import ActionButton from "@/components/Shared/ActionButton.vue";
+import TextInput from "@/components/Shared/TextInput.vue";
 export default {
   name: "JobSearchForm",
   components: {
     ActionButton,
+    TextInput,
   },
   data() {
     return {
       role: "",
       location: "",
     };
+  },
+  methods: {
+    updateRole(value) {
+      this.role = value;
+    },
   },
 };
 </script>
