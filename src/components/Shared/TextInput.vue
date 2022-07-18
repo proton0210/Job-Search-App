@@ -1,7 +1,7 @@
 <template>
   <input
     type="text"
-    :value="value"
+    :value="modelValue"
     :placeholder="placeholder"
     @input="inputHandler"
     class="w-full font-normal border-none test-lg focus:ring-0"
@@ -18,7 +18,7 @@ export default {
       required: true,
       default: "",
     },
-    value: {
+    modelValue: {
       type: String,
       required: true,
     },
@@ -26,7 +26,7 @@ export default {
   methods: {
     // In parent component i.e JobSearchForm.vue, we have this EVENT(@) as : as handle-input
     inputHandler($event) {
-      this.$emit("handleInput", $event.target.value); // name of the event and payload
+      this.$emit("update:modelValue", $event.target.value); // name of the event and payload
     },
   },
 };
