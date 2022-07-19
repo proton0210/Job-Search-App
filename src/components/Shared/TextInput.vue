@@ -3,8 +3,8 @@
     type="text"
     :value="modelValue"
     :placeholder="placeholder"
-    @input="inputHandler"
     class="w-full font-normal border-none test-lg focus:ring-0"
+    @input="inputHandler"
   />
 </template>
 
