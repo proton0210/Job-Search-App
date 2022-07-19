@@ -23,6 +23,7 @@ export default {
       required: true,
     },
   },
+  emits: ["update:modelValue"],
   methods: {
     // In parent component i.e JobSearchForm.vue, we have this EVENT(@) as : as handle-input
     inputHandler($event) {
