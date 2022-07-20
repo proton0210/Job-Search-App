@@ -1,22 +1,27 @@
 import SubNav from "@/components/Navigation/SubNav.vue";
-import { shallowMount } from "@vue/test-utils";
+import { mount } from "@vue/test-utils";
 
-// replacing mount with shallowMount to test the component without the sub-components
+// replacing mount with mount to test the component without the sub-components
 describe("SubNav.vue", () => {
+  const createConfig = (routeName) => ({
+    global: {
+      mocks: {
+        $route: {
+          name: routeName,
+        },
+      },
+      stubs: {
+        FontAwesomeIcon: true,
+      },
+    },
+  });
+  //implicit return of an object
   describe("when user is on jobs page", () => {
     it("displays job count", () => {
-      const wrapper = shallowMount(SubNav, {
-        global: {
-          stubs: {
-            FontAwesomeIcon: true,
-          },
-        },
-        data() {
-          return {
-            onJobsResultPage: true,
-          };
-        },
-      });
+      const routeName = "JobResults";
+
+      const wrapper = mount(SubNav, createConfig(routeName));
+
       const JobCount = wrapper.find("[data-test='job-count']");
       expect(JobCount.exists()).toBe(true);
     });
@@ -24,18 +29,10 @@ describe("SubNav.vue", () => {
 
   describe("When user is NOT on job page", () => {
     it("does not display job count", () => {
-      const wrapper = shallowMount(SubNav, {
-        global: {
-          stubs: {
-            FontAwesomeIcon: true,
-          },
-        },
-        data() {
-          return {
-            onJobsResultPage: false,
-          };
-        },
-      });
+      const routeName = "home";
+
+      const wrapper = mount(SubNav, createConfig(routeName));
+
       const JobCount = wrapper.find("[data-test='job-count']");
       expect(JobCount.exists()).toBe(false);
     });

@@ -1,11 +1,19 @@
 import MainNav from "@/components/Navigation/MainNav.vue";
-import { shallowMount } from "@vue/test-utils";
+import { RouterLinkStub, shallowMount } from "@vue/test-utils";
 
 // replacing mount with shallowMount to test the component without the sub-components
 
 describe("MainNav.vue", () => {
+  let wrapper
+  beforeEach(() => {
+     wrapper = shallowMount(MainNav, {
+      stubs: {
+        "router-link": RouterLinkStub,
+      },
+    });
+  });
+
   it("Displays company name", () => {
-    const wrapper = shallowMount(MainNav);
     expect(wrapper.text()).toMatch("Bobo Careers");
   });
 
