@@ -1,12 +1,15 @@
 // import HomeView from "@/views/HomeView.vue";
 // import JobResultsView from "@/views/JobResultsView.vue";
 // import JobView from "@/views/JobView.vue";
+
 import { createRouter, createWebHashHistory } from "vue-router";
 
 //lazy loading.
 const HomeView = () => import("@/views/HomeView.vue");
-const JobResultsView = () => import("@/views/JobResultsView.vue");
-const JobView = () => import("@/views/JobView.vue");
+const JobResultsView = () =>
+  import(/* webpackChunkName:"jobs" */ "@/views/JobResultsView.vue");
+const JobView = () =>
+  import(/* webpackChunkName:"jobs" */ "@/views/JobView.vue");
 
 const routes = [
   {
