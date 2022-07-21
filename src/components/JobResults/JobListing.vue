@@ -10,10 +10,23 @@
 
 <script>
 import JobListItem from "@/components/JobResults/JobListItem.vue";
+import axios from "axios";
+
 export default {
   name: "JobListing",
+
   components: {
     JobListItem,
+  },
+  data() {
+    return {
+      jobs: [],
+    };
+  },
+  mounted() {
+    axios.get("http://localhost:3000/jobs").then((response) => {
+      this.jobs = response.data;
+    });
   },
 };
 </script>
