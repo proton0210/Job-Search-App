@@ -3,6 +3,7 @@
     <li class="mb-7">
       <router-link
         :to="jobPageLink"
+        data-test="job-page-link"
         class="block mx-auto bg-white border border-solid border-brand-gray-2 rounded hover:shadow-gray"
       >
         <div class="pt-5 pb-2 mx-8 border-b border-solid border-brand-gray-2">
