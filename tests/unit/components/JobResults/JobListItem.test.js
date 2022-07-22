@@ -53,8 +53,8 @@ describe("JobListItem.vue", () => {
 
   it("Links ro individual Job's page", () => {
     const wrapper = mount(JobListItem, createConfig({ id: 15 }));
-    const jobPageLink = wrapper.find("[data-test='job-page-link']");
+    const jobPageLink = wrapper.findComponent(RouterLinkStub);
     const toProp = jobPageLink.props("to");
-    expect(toProp).toBe("/jobs/results15");
+    expect(toProp).toBe("/jobs/results/15");
   });
 });
