@@ -9,7 +9,20 @@ describe("JobListing.vue", () => {
     axios.get.mockResolvedValue({
       data: [], // we don't care about the data here,one if it returns an arta
     });
-    shallowMount(JobListing);
+
+    const $route = {
+      query: {
+        page: "1",
+      },
+    };
+
+    shallowMount(JobListing, {
+      global: {
+        mocks: {
+          $route,
+        },
+      },
+    });
     expect(axios.get).toHaveBeenCalledWith("http://localhost:3000/jobs");
   });
 
@@ -17,7 +30,19 @@ describe("JobListing.vue", () => {
     axios.get.mockResolvedValue({
       data: Array(10).fill({}),
     });
-    const wrapper = shallowMount(JobListing);
+
+    const $route = {
+      query: {
+        page: "1",
+      },
+    };
+    const wrapper = shallowMount(JobListing, {
+      global: {
+        mocks: {
+          $route,
+        },
+      },
+    });
     await flushPromises();
     const jobListings = wrapper.findAll("[data-test='job-listing']");
     expect(jobListings).toHaveLength(10);
